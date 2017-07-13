@@ -1,0 +1,521 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Guia de geometria analitica</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<!--grupo CSS-->
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
+<link rel="stylesheet" href="css/tema-app11.min.css"/>
+<!--<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/> -->
+<!--grupo JavaScript-->
+<!-- Start WOWSlider.com HEAD section -->
+<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+<!-- Start WOWSlider.com HEAD section -->
+<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/acciones.js"></script>
+<script src="phonegap/js"></script>
+<script type="text/javascript">
+
+
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('imagenes/4ce.png')">
+
+<div data-role="page" id="Principal">
+<div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar" data-back-btn-theme="b">
+<h1 align="center">  Analitica (beta)</h1>
+<p align="center"><img src="imagenes/descartes.gif" alt="descartes" width="320" height="200" align="center"></p>
+<div align="center">
+  
+</div>
+
+</div>
+<div>
+  <ul data-role="listview" data-theme="b" class="ui-listview ui-group-theme-b">
+<li class="ui-first-child ui-last-child">
+<a href="#Pagina1" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+<h2>Sobre la Geometria Analitica </h2>
+<p>Acerca de la Geometria Analitica</p>
+</a>
+<a href="#Pagina2" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+<h2>Puntos en un plano cartesiano</h2>
+<p>Encuentra puntos en un plano cartesiano</p>
+</a>
+<a href="#Pagina3" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+<h2>Determinar triangulo </h2>
+<p>Determinar qué tipo de triangulo se forma dado tres puntos como vértices</p>
+</a>
+<a href="#Pagina4" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+<h2>Rectas notables de un triangulo </h2>
+<p>Rectas notables</p>
+</a>
+<a href="#Pagina5" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+<h2>Conicas </h2>
+<p>Las conicas </p>
+</a>
+<a href="#Pagina6" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+<h2>Circunferencia </h2>
+<p>Conica: circunferencia </p>
+</a>
+<a href="#Pagina7" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+<h2>Elipse</h2>
+<p>Conica:elipse</p>
+</a>
+<a href="#Pagina8" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+<h2>Parabola</h2>
+<p>Conica: parabola</p>
+</a>
+<a href="#Pagina9" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+<h2>Hiperbola</h2>
+<p>Conica: hiperbola</p>
+</a>
+</li>
+  </ul>
+</div>
+<div data-role="footer" align="center" data-theme="b" data-position="fixed">
+<div>
+<img src="res/android/mdpi.gif" width="46" height="46">
+
+</div>
+<div>
+<h4> Guia Geometria Analitica </h4>
+<h4>Oscar Oaxaca Telez</h4
+></div>
+</div>
+</div>
+<div data-role="page" id="Pagina1" data-add-back-btn="true" data-theme="b">
+<div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar"data-back-btn-theme="b">
+<h1>Geometria Analitica </h1>
+<p>  La geometría analítica estudia con profundidad las figuras geométricas ejemplo: sus distancias, sus áreas, puntos de intersección, ángulos de inclinación, puntos de división, volúmenes, etc. Es un estudio más profundo para saber con detalle todos los datos que tiene las figuras geométricas.<br>
+</p>
+<p>Gráfica de dos hipérbolas y sus asíntotas.<br>
+  La geometría analítica estudia las figuras geométricas mediante técnicas básicas del análisis matemático y del álgebra en un determinado sistema de coordenadas. Su desarrollo histórico comienza con la geometría cartesiana, continúa con la aparición de la geometría diferencial de Carl Friedrich Gauss y más tarde con el desarrollo de la geometría algebraica.</p>
+<p>Actualmente la geometría analítica tiene múltiples aplicaciones más allá de las matemáticas y la ingeniería, pues forma parte ahora del trabajo de administradores para la planeación de estrategias y logística en la toma de decisiones.</p>
+<p>&nbsp;</p>
+
+
+<div data-role="collapsible" data-content-theme="false">
+<h1 align="center">René Descartes </h1>
+<p align="center">René Descartes, también llamado Renatus Cartesius (en escritura latina) (La Haye en Touraine, Turena, 31 de marzo de 1596-Estocolmo, Suecia, 11 de febrero de 1650), fue un filósofo, matemático y físico francés, considerado como el padre de la geometría analítica y de la filosofía moderna, así como uno de los epígonos con luz propia en el umbral de la revolución científica.</p>
+<div>
+<p align="center"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('5775','','imagenes/4ce.png',1)"><img src="imagenes/descartesrene.jpg" width="278" height="261" id="5775"></a></p>
+<p align="center">&nbsp;</p>
+<div align="center"><br>
+</div>
+<div></div>
+</div>
+<p>&nbsp;</p>
+<div align="center"></div>
+
+<div data-role="main" class="ui-content" align="center">
+  <div style="width:40%;">
+    <ul data-role="controlgroup" data-type="vertical" data-theme="b">
+      <li class="ui-first-child ui-last-child"> </li>
+    </ul>
+    <ul data-role="controlgroup" data-type="vertical" data-theme="b">
+      <li class="ui-first-child ui-last-child"> </li>
+    </ul>
+    <ul data-role="controlgroup" data-type="vertical" data-theme="b">
+  <li class="ui-first-child ui-last-child">
+    <h2><a href="https://es.wikipedia.org/wiki/Ren%C3%A9_Descartes" target="_self" data-role="button">Link fuente</a></h2>
+ 
+
+
+
+ 
+  </li>
+  </li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div data-role="main" class="ui-content"> </div>
+<div data-role="footer" data-theme="b" data-position="fixed">
+  <h4>Guia Geometria Analitica </h4>
+</div>
+</div>
+<div data-role="page" id="Pagina2" data-add-back-btn="true" data-theme="b">
+<div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar"data-back-btn-theme="b">
+<h1>Puntos en un plano cartesiano </h1>
+<p>Una forma grafica para representar expresiones algebr�icas es por medio del <strong>plano cartesiano</strong>, el cual consta de dos rectas numericas: una horizontal llamada <em>eje de las abscisas </em>o de las <em>equis </em>(x), y otra vertical llamada <em>eje de las ordenadas</em> o <em>de las yes</em> (y), las cuales se intersecan en un punto que recibe el nombre de origen, al que corresponde el punto O.</p>
+<p>Esos dos ejes dividen al plano en cuatro regiones llamadas <strong>cuadrantes, </strong>que se numeran en sentido contrario al movimiento de las manecillas del reloj.</p>
+<p>&nbsp;</p>
+<p align="center"><img src="imagenes/ted.png" alt="jkbi" width="379" height="256"></p>
+<p>Como el plano cartesiano son dos rectas numericas, a la izquierda del origen, en el eje de las abscisas, se encuentran los valores negativos, y a la derecha los positivos. En el eje de las ordenadas, del origen hacia arriba, se encuentran los valores positivos y hacia abajo, los negativos, de donde resulta lo siguiente:</p>
+<p><strong>Primer cuadrante:</strong> abscisa positiva y ordenada positiva.</p>
+<p><strong>Segundo cuadrante:</strong> abscisa negativa y ordenada positiva.</p>
+<p><strong>Tercer cuadrante:</strong> abscisa negativa y ordenada negativa.</p>
+<p><strong>Cuarto cuadrante:</strong> abscisa positiva y ordenada negativa.</p>
+<p>Un punto en el plano se localiza con una pareja ordenada de valores (x, y) llamados coordenadas, donde <strong>x </strong>es la primera componente y <strong>y </strong>la segunda. La primera componente (x) se localiza en el eje de las abscisas, y la segunda (y) en el eje de las ordenadas.</p>
+<p>Al trazar las perpendiculares de cada uno de los ejes desde esos puntos, las lineas resultantes se intersecan en un punto que es el lugar buscado.</p>
+<p>Si se tiene el par ordenado A (6, 2) y se localiza en el plano, la primera componente (6) se localiza en el eje de las abscisas y la segunda (2) en el eje de las ordenadas; al trazar la perpendicular de los ejes coordenados desde esos puntos se encuentra su interseccion, que es la coordenada A (6, 2).</p>
+<p><img src="imagenes/gikl.png" alt="grh" width="366" height="226"></p>
+<p>En el par ordenado B (-7, 4) se puede observar que el valor de <strong>x </strong>es negativo y el de <strong>y </strong>es positivo, por lo que tal punto se localiza en el segundo cuadrante. Si el punto a localizar es C (--5, -2), el punto estar en el tercer cuadrante y si es D (8, -3), estar en el cuarto cuadrante.</p>
+<p><img src="imagenes/adam.png" alt="hgj" width="277" height="206"></p>
+<p>Cuando la abscisa del par ordenado es 0, por ejemplo M (0, 5), el punto se localiza sobre el eje de las <strong>y. </strong>Y si la ordenada es 0, por ejemplo N (-7, 0) el punto se localiza en el eje de las <strong>x.</strong></p>
+<p><img src="imagenes/dhgj.png" alt="dfgn" width="277" height="164"></p>
+<p>En ocasiones es necesario identificar las coordenadas de un punto observando su localizacion con respecto al origen. Por ejemplo:</p>
+<p><img src="imagenes/gyuo.png" alt="gh" width="351" height="198"></p>
+<p>El punto A se localiza en la interseccion de las perpendiculares del eje de las abscisas en el punto 6 y del eje de las ordenadas en el 3; por lo tanto, sus coordenadas son (6, 3).</p>
+<p>El punto B se localiza en la interseccion de las perpendiculares del eje de las abscisas en el punto -2 y del eje de las ordenadas en el -4, por lo tanto, sus coordenadas son (-2, -4).</p>
+<p>En el plano cartesiano es posible representar expresiones algebraicas y su uso abarca no solo aspectos estrictamente matem�ticos sino tambi�n relativos a otras ramas de la ciencia.</p>
+<div data-role="main" class="ui-content" align="center">
+  <div style="width:40%;">
+<ul data-role="controlgroup" data-type="vertical" data-theme="b">
+<li class="ui-first-child ui-last-child">
+
+
+<li class="ui-first-child ui-last-child">
+<a href="https://www.zonaturistica.com/atractivo-turistico/1159/cerro-de-san-miguel-atlixco.html" target="_self" data-role="button" >
+<h2>Link fuente</h2>
+</a> 
+
+
+
+ 
+</li>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div data-role="main" class="ui-content"> </div>
+<div data-role="footer" data-theme="b" data-position="fixed">
+  <h4>Guia Geometria Analitica</h4>
+</div>
+</div>
+<div data-role="page" id="Pagina3" data-add-back-btn="true" data-theme="b">
+<div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar"data-back-btn-theme="b">
+<h1 itemprop="headline">Determinar qué tipo de triángulo se forma dados tres puntos como vértices</h1>
+<h1 align="center"><img src="imagenes/gyj.png" alt="yj" width="289" height="270"></h1>
+<p>En esta sección vamos a determinar que tipo de triángulo se forma con tres puntos dados en el plano cartesiano: Triángulo equilátero, isósceles o escaleno. Para ello aremos uso de la fórmula de la distancia: La distancia entre dos puntos, P(x1,y1) y Q(x2,y2), está dada por</p>
+<p align="center"><img src="imagenes/gyu.png" alt="ok" width="224" height="58"></p>
+<p>Recordemos que:</p>
+<ul>
+  <li>Un<strong> triángulo equilátero</strong> es aquel que tiene los tres lados iguales.</li>
+  <li>Un <strong>triángulo isósceles</strong> es aquel que tiene dos lados iguales y uno diferente.</li>
+  <li>Un <strong>triángulo escaleno</strong> es aquel que tiene los tres lados diferentes.</li>
+</ul>
+<p>Además, también, verificaremos si tal triángulo es un triángulo rectángulo, para ello vamos a utilizar el teorema de Pitágoras, ya que este teorema sólo se cumple para tales triángulos. Este teorema nos dice que la suma de los cuadrados de los catetos (a y b) es igual al cuadrado de la hipotenusa (c)</p>
+<p>a² + b² = c²</p>
+<p>Donde la hipotenusa es el lado más grande y los catetos los lados más pequeños.</p>
+<p>Tengamos en cuenta que un <strong>triángulo rectángulo</strong> es aquel en el que uno de sus ángulos es recto.</p>
+<p>Si el triángulo cumple que es rectángulo, también, calcularemos el área de ese triángulo. Recordemos que el área de un triángulo está dada por</p>
+<p align="center"><img src="imagenes/rdtuj.png" alt="tyj" width="196" height="56"></p>
+<p>&nbsp;</p>
+<div data-role="main" class="ui-content" align="center">
+  <div style="width:40%;">
+<ul data-role="controlgroup" data-type="vertical" data-theme="b">
+<li class="ui-first-child ui-last-child">
+
+
+<li class="ui-first-child ui-last-child">
+<a href="https://youtu.be/pGDsRSooBY0" target="_self" data-role="button" >
+<h2>Click para mas</h2>
+</a> 
+
+
+
+ 
+</li>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div data-role="main" class="ui-content"> </div>
+<div data-role="footer" data-theme="b" data-position="fixed">
+  <h4>Guia Geometria Analitica</h4>
+</div>
+</div>
+<div data-role="page" id="Pagina4" data-add-back-btn="true" data-theme="b">
+<div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar"data-back-btn-theme="b">
+  <h2><strong>Rectas notables del triangulo</strong></h2>
+  <p>&nbsp;</p>
+
+<p align="center"><img src="imagenes/yjftf.png" alt="ftj" width="333" height="261"></p>
+<p align="center"><img src="imagenes/tata.png" alt="hu" width="383" height="325"></p>
+<div data-role="main" class="ui-content" align="center">
+  <div style="width:40%;">
+<ul data-role="controlgroup" data-type="vertical" data-theme="b">
+<li class="ui-first-child ui-last-child">
+
+
+<li class="ui-first-child ui-last-child">
+<a href="http://www.vadenumeros.es/primero/alturas-mediatrices-medianas.htm" target="_self" data-role="button" >
+<h2>Da click para mas </h2>
+</a> 
+
+
+
+ 
+</li>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div data-role="footer" data-theme="b" data-position="fixed">
+  <h4>Guia Geometria Analitica</h4>
+</div>
+</div>
+</div>
+<div data-role="page" id="Pagina5" data-add-back-btn="true" data-theme="b">
+<div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar"data-back-btn-theme="b">
+  <h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" align="left"><span id="sites-page-title" dir="ltr" tabindex="-1">Las cónicas</span></h3>
+  <div id="sites-canvas-main">
+    <div id="sites-canvas-main-content">
+      <table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0">
+        <tbody>
+          <tr>
+            <td><div dir="ltr">
+              <p>Se denomina <strong>sección cónica</strong> (o simplemente <strong>cónica</strong>) a todas las curvas intersección entre un cono y un plano; si dicho plano no pasa por el vértice, se obtienen las cónicas propiamente dichas. Se clasifican en tres tipos: <a href="http://es.wikipedia.org/wiki/Elipse" title="Elipse" rel="nofollow">elipse</a>, <a href="http://es.wikipedia.org/wiki/Par%C3%A1bola_%28matem%C3%A1tica%29" title="Parábola (matemática)" rel="nofollow">parábola</a> e <a href="http://es.wikipedia.org/wiki/Hip%C3%A9rbola" title="Hipérbola" rel="nofollow">hipérbola</a>. un <a href="http://es.wikipedia.org/wiki/Cono_%28geometr%C3%ADa%29" title="Cono (geometría)" rel="nofollow">cono</a> circular recto de dos hojas con un plano que no pasa por su vértice</p>
+              <p>De acuerdo al ángulo y el lugar de la intersección es posible obtener circulos, hiperbolas , elipses o parabolas. Cuando el plano solo toca uno de los mantos del cono y no es paralelo a una de sus aristas se obtiene una Elipse. Cuando el plano corta los dos mantos del cono se obtiene una hiperbola. Cuando el plano que corta es paralelo a una de las aristas del cono se obtiene una parábola.</p>
+              <p><strong><u>Tipos:</u></strong></p>
+              <p>En función de la relación existente entre el ángulo de conicidad (α) y la inclinación del plano respecto del eje del cono (β), pueden obtenerse diferentes secciones cónicas, a saber:</p>
+              <ul>
+                <li>β &lt; α : <a href="http://es.wikipedia.org/wiki/Hip%C3%A9rbola" title="Hipérbola" rel="nofollow">Hipérbola</a> (naranja)</li>
+                <li>β = α : <a href="http://es.wikipedia.org/wiki/Par%C3%A1bola_%28matem%C3%A1tica%29" title="Parábola (matemática)" rel="nofollow">Parábola</a> (azulado)</li>
+                <li>β &gt; α : <a href="http://es.wikipedia.org/wiki/Elipse" title="Elipse" rel="nofollow">Elipse</a> (verde)</li>
+                <li>β = 90º: <a href="http://es.wikipedia.org/wiki/Circunferencia" title="Circunferencia" rel="nofollow">Circunferencia</a> (un caso particular de elipse) (rojo)</li>
+                <li></li>
+              </ul>
+              <p><img src="imagenes/tfgh.png" width="220" height="183" alt="gfh"></p>
+            </div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p>Aplicaciones</p>
+  <p>Las curvas cónicas son importantes en astronomía: dos  cuerpos masivos que interactúan según la ley de gravitación universal, sus  trayectorias describen secciones cónicas si su centro de masa se considera en  reposo. Si están relativamente próximas describirán elipses, si se alejan  demasiado describirán hipérbolas o parábolas.</p>
+  <p>También son importantes en aerodinámica y en su aplicación  industrial, ya que permiten ser repetidas por medios mecánicos con gran  exactitud, logrando superficies, formas y curvas perfectas.</p>
+  <p>&nbsp;</p>
+  <p>Un poco de Historia:</p>
+  <p>El descubrimiento de las secciones cónicas estuvo  íntimamente ligado a uno de los tres problemas clásicos de la geometría griega,  la duplicación del cubo o problema de Delos.</p>
+  <p>&quot;...la peste se llevo una cuarta parte de la población  ateniense y la profunda impresión que produjo esta catástrofe fue probablemente  el origen del segundo problema...&quot;</p>
+  <p>&quot;...Se envió una delegación al oráculo de Apolo en  Delos, para preguntar cómo podría conjurarse la peste, a lo que el oráculo  contesto que era necesario duplicar el altar cúbico dedicado a Apolo. Al  parecer los atenienses duplicaron las dimensiones del altar, pero esto no  sirvió para detener la peste, obviamente habían aumentado ocho veces su volumen  en lugar de dos ...&quot;</p>
+  <p>Fue Hipocrátes de Chios quien demostró que se podría  conseguir la duplicación del cubo siempre que se pudiera encontrar curvas que  cumplieran a/x=x/y=y/2a; y Menecmo halló dichas curvas como secciones (las  secciones en aquellos tiempos sólo se consideraban perpendiculares a la  generatriz) de conos circulares rectos (ortotoma), agudos (oxitoma) y obtusos  (amblitoma). Pero es Apolonio de Perga quien hace un tratamiento tan exhaustivo  que desplaza a todos los anteriores, y quien da una formulación definitiva.</p>
+  <p>&nbsp;</p>
+  <p>Apolonio les da su nombre definitivo Ellipsis (deficiencia),  Hyperbola (avanzar más allá) y Parábola (colocar al lado o comparar) que  indicaba que no había deficiencia ni exceso.</p>
+  <p>Apolonio fue el primero en obtener todas las curvas a partir  de las secciones del cono recto, variando el ángulo de inclinación del plano  con respecto al eje del cono y &quot;a partir del cono dedujo una propiedad  plana fundamental, una condición necesaria y suficiente para que un punto esté  situado en la curva, y en ese momento abandonó el cono y procedió a estudiar  las cónicas por métodos planimétricos exclusivamente...&quot; y &quot;consigue  una de las mejores obras de la matemática antigua&quot;.</p>
+  <p>Mientras que Apolonio habia considerado tres tipos de  curvas, Kepler prefería considerar cinco tipos... A partir de un par de rectas  que se cortan, en la que los focos coinciden con el punto de intersección,  podemos pasar gradualmente por un conjunto infinito de hipérbolas, según uno de  los focos va alejandose más y más del otro. Cuando el segundo foco se haya  alejado infinitamente, no tenemos ya una hipérbola con sus dos ramas sino una  parábola. Según el foco móvil traspasa el punto del infinito y se va acercando  de nuevo por el otro lado, vamos pasando por un conjunto de elipses, hasta que  cuando los focos coinciden tenemos una circunferencia como último tipo de  cónica. En 1609 enuncia Kepler sus dos primeras leyes astronómicas, los  planetas se mueven alreedor del Sol sigueindo órbitas elípticas uno de cuyos  focos es el Sol y el radio vector que va del Sol a un planeta barre áreas  iguales en tiempos iguales.</p>
+  <p>Descartes sólo en un caso examina con detalle un lugar  geométrico, y es en conexión con el problema del lugar de las tres y cuatro  rectas de Pappus del que obtiene Descartes la ecuación y2=ay-bxy+cx-dx2.  Ecuación general de una cónica que pasa por el origen de coordenadas...&quot;,  &quot;.. Descartes presenta condiciones sobre los coeficientes para que la  cónica sea una recta, una parábola, una elipse o una hipérbola...&quot;,  &quot;...sabía que eligiendo adecuadamente tanto el origen de coordenadas como  los ejes, podía reducirse la ecuación a la forma más sencilla, pero el hecho es  que no da ninguna de las formas canónicas.&quot;</p>
+  <p>Tras la Geometría de Descartes publicada en francés y no en  latín (la lengua universal de la ciencia), Van Schooten la traduce al latín en  1649 y junto con sus discipulos adquiere la geometría cartesiana un rápido  desarrollo, Debeaune en Notae breves demuestra que las ecuaciones y2=xy+bx,  y2=-2dy+bx e y2 =bx-x2, representan respectivamente hipérbolas, parábolas y  elipses. Pero es en 1658 cuando uno de los miembros del grupo de Van Schooten,  Jan de Witt reduce todas las ecuaciones de segundo grado en x e y a formas  canónicas, por medio de rotaciones y traslaciones de los ejes. De Witt sabía  cómo reconocer cuándo tal ecuación representaba una elipse, cuándo una parábola  y cuándo una hipérbola, según que el llamado discriminante fuera negativo, nulo  o positivo.</p>
+  <p>Boyer, C., &quot;Historia de las Matemáticas&quot;. Alianza Universidad. Madrid. 1987</p>
+<h2>&nbsp;</h2>
+  <h1>&nbsp;</h1>
+<p>&nbsp;</p>
+<div data-role="main" class="ui-content" align="center">
+  <div style="width:40%;">
+<ul data-role="controlgroup" data-type="vertical" data-theme="b">
+<li class="ui-first-child ui-last-child">
+
+
+<li class="ui-first-child ui-last-child">
+<a href="https://youtu.be/cUN7Io8OGxs" target="_self" data-role="button" >
+<h2>Link fuente</h2>
+</a> 
+
+
+
+ 
+</li>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div data-role="footer" data-theme="b" data-position="fixed">
+  <h4>Guia Geometria Analitica </h4>
+</div>
+</div>
+<div data-role="page" id="Pagina6" data-add-back-btn="true" data-theme="b">
+<div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar"data-back-btn-theme="b">
+  <h2><strong>Circunferencia </strong></h2>
+  <p>Definición:</p>
+  <p align="center"><img src="imagenes/circu.png" alt="dgb" width="347" height="99"></p>
+  <p>Al punto &ldquo;O &rdquo; se le denomina centro de la circunferencia y a &ldquo;r &rdquo; se le  denomina radio de la circunferencia.</p>
+  <p>Ecuación canónica de la circunferencia  Supongamos que O tiene coordenadas (h,k)</p>
+  <p align="center"><img src="imagenes/mmuejer.png" alt="fgb" width="342" height="297"></p>
+  <p align="center"><img src="imagenes/music.png" alt="baby" width="351" height="148"></p>
+  <p align="center"><img src="imagenes/amaneciendo.png" alt="tuyobb" width="357" height="245"></p>
+<p align="center"><img src="imagenes/recu.png" alt="mujer" width="359" height="146"></p>
+<p align="center"><img src="imagenes/halo.png" alt="mierror" width="344" height="310"></p>
+<div data-role="main" class="ui-content" align="center">
+  <div style="width:40%;">    </div>
+</div>
+<div style="width:40%;">
+<ul data-role="controlgroup" data-type="vertical" data-theme="b">
+<li class="ui-first-child ui-last-child">
+
+
+<li class="ui-first-child ui-last-child">
+<a href="https://www.dspace.espol.edu.ec/bitstream/123456789/781/3/1487.pdf" target="_self" data-role="button" >
+<h2>Mas info.</h2>
+</a> 
+
+
+
+ 
+</li>
+</li>
+</ul>
+</div>
+</div>
+<div data-role="footer" data-theme="b" data-position="fixed">
+  <h4>Guia Geometria Analitica</h4>
+</div>
+</div>
+<div data-role="page" id="Pagina7" data-add-back-btn="true" data-theme="b">
+<div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar"data-back-btn-theme="b">
+  <h2><strong>Elipse</strong></h2>
+  <p>Sean F1 y F2 dos puntos del plano y  sea a una constante positiva. La Elipse se define como el conjunto de puntos P(x,y)tales  que la suma de su distancia a F1 con su distancia a F2 es  igual a 2a. Es decir: Elipse= {P( x, y) / d(P,F1 ) +d(P,F2  ) =2a }</p>
+  <p>A F1 y F2 se les denomina focos de la elipse y &ldquo;a&rdquo; representa la  medida del semieje mayor de la elipse. </p>
+  <p>Ecuacion de la elipse:</p>
+  <p align="center"><img src="imagenes/alove.png" alt="h" width="347" height="283"></p>
+  <p align="center"><img src="imagenes/summer.png" alt="rio" width="310" height="95"></p>
+  <p align="center"><img src="imagenes/self.png" alt="him" width="344" height="407"></p>
+  <p align="center">&nbsp;</p>
+  <p align="center"><img src="imagenes/day.png" alt="cfgtuy" width="345" height="346"></p>
+  <div style="width:40%;">
+  <ul data-role="controlgroup" data-type="vertical" data-theme="b">
+  <li class="ui-first-child ui-last-child">
+    
+    
+  <li class="ui-first-child ui-last-child">
+  <h2><a href="https://www.dspace.espol.edu.ec/bitstream/123456789/781/3/1487.pdf" target="_self" data-role="button">Mas info.</a></h2>
+ 
+
+
+
+ 
+  </li>
+  </li>
+  </ul>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<div data-role="footer" data-theme="b" data-position="fixed">
+  <h4>Guia Geometria Analitica</h4>
+</div>
+</div>
+
+<div data-role="page" id="Pagina8" data-add-back-btn="true" data-theme="b">
+<div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar"data-back-btn-theme="b">
+  <h2 align="center"><strong>Parabola</strong></h2>
+  <p align="center"><img src="imagenes/aiko.png" alt="city" width="332" height="307"></p>
+  <p align="center">&nbsp;</p>
+  <div style="width:40%;"> 
+    <div align="center"><img src="imagenes/live.png" alt="vtr" width="339" height="295">  </div>
+  </div>
+  
+<div style="width:40%;">
+<div align="center">
+  <ul data-role="controlgroup" data-type="vertical" data-theme="b">
+    <li class="ui-first-child ui-last-child">
+    </ul>
+</div>
+<ul data-role="controlgroup" data-type="vertical" data-theme="b">
+</ul>
+<ul data-role="controlgroup" data-type="vertical" data-theme="b">
+  <li class="ui-first-child ui-last-child">
+<a href="https://www.dspace.espol.edu.ec/bitstream/123456789/781/3/1487.pdf" target="_self" data-role="button" >
+<h2>Mas info.</h2>
+</a> 
+
+
+
+ 
+</li>
+</li>
+</ul>
+</div>
+<p>&nbsp;</p>
+</div>
+<div data-role="footer" data-theme="b" data-position="fixed">
+  <h4>Guia Geometria Analitica</h4>
+</div>
+</div>
+
+<div data-role="page" id="Pagina9" data-add-back-btn="true" data-theme="b">
+<div data-role="header" data-add-back-btn="true" data-back-btn-text="Regresar"data-back-btn-theme="b">
+  <h2 align="center"><strong>Hiperbola</strong></h2>
+  <div align="center">
+    <div style="width:40%;">      </div>
+  </div>
+<p align="center"><img src="imagenes/forme.png" alt="e" width="322" height="456"></p>
+<p align="center"><img src="imagenes/medicine.png" alt="guitar" width="304" height="90"></p>
+<p align="center"><img src="imagenes/scalaja.png" alt="badme" width="335" height="362"></p>
+<p align="center"><img src="imagenes/you give love abad name.png" alt="oai" width="336" height="149"></p>
+<div style="width:40%;">
+<div align="center">
+  <ul data-role="controlgroup" data-type="vertical" data-theme="b">
+    <li class="ui-first-child ui-last-child">
+    <li class="ui-first-child ui-last-child"> </li>
+  </ul>
+</div>
+<ul data-role="controlgroup" data-type="vertical" data-theme="b">
+  <li class="ui-first-child ui-last-child">
+    <h2 align="center"><a href="https://www.dspace.espol.edu.ec/bitstream/123456789/781/3/1487.pdf" target="_self" data-role="button">Mas info.</a></h2>
+ 
+
+
+
+ 
+</li>
+</li>
+</ul>
+</div>
+<p>&nbsp;</p>
+</div>
+<div data-role="footer" data-theme="b" data-position="fixed">
+  <h4>Guia Geometria Analitica</h4>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>
